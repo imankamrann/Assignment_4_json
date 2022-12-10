@@ -1,22 +1,17 @@
 [
     {
-        "name": "dad",
+        "name": "john",
         "age": "3",
-        "power": "slay"
+        "power": "magic"
     },
     {
-        "name": "noya",
+        "name": "bob",
         "age": "16",
-        "power": "swag"
+        "power": "teleport"
     },
     {
-        "name": "mama",
+        "name": "jeff",
         "age": "38",
-        "power": "art"
-    },
-    {
-        "name": "iman",
-        "age": "18",
-        "power": "slay"
+        "power": "artist"
     }
 ]

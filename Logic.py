@@ -1,6 +1,7 @@
 # logic
 
 import json
+import iUtils as i
 
 
 class ResourceManager:
@@ -16,7 +17,7 @@ class ResourceManager:
             with open(self.getFileName(), 'r') as f:
                 resource = json.load(f)
         except:
-            print('An exception occurred while opening file.')
+            i.print_bad('\nAn exception occurred while opening file.')
         return resource
 
     def writeFile(self, data):
@@ -24,7 +25,7 @@ class ResourceManager:
             with open(self.getFileName(), "w") as f:
                 json.dump(data, f, indent=4)
         except:
-            print('An exception occurred while writing a file.')
+            i.print_bad('\nAn exception occurred while writing a file.')
         return data
 
 
@@ -36,7 +37,7 @@ class ResourceManager:
             age = item["age"]
             power = item["power"]
 
-            print(f"Characters name: {name}")
+            print(f"Character name: {name}")
             print(f"Age: {age}")
             print(f"Power: {power}")
             print("\n\n")
@@ -52,16 +53,16 @@ class ResourceManager:
                 power = val["power"]
 
                 if name == u_input:
-                    print("Character Name Found:", name)
+                    i.print_good("\nCharacter Name Found: "+ name)
                     return name
                 elif age == u_input:
-                    print("Character Name Found:", name)
+                    i.print_good("\nCharacter Name Found: "+ name)
                     return name
                 elif power == u_input:
-                    print("Character Name Found:", name)
+                    i.print_good("\nCharacter Name Found: "+ name)
                     return name
             else:
-                print("User Does Not Exist!")
+                i.print_bad("\nUser Does Not Exist!")
                 return False
 
     def add_data(self, nameEntered, ageEntered, powerEntered):

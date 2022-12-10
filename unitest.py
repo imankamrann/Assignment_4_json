@@ -3,6 +3,7 @@ r=ResourceManager()
 
 import Logic
 import json
+import iUtils as i
 
 
 # with open("characters.json", 'r') as f:
@@ -85,7 +86,7 @@ def search():
                
 
                     
-search()
+# search()
             
               
 
@@ -125,8 +126,12 @@ search()
 # print(myList)
 
 
-myList=r.delete_data("mom")
-print(myList)
+# myList=r.delete_data("mom")
+# print(myList)
+
+i.print_bad("Hello")
+i.print_good("Hello")
+
 
 
 

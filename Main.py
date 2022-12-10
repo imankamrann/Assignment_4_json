@@ -1,6 +1,7 @@
 #user interaction
 from Logic import ResourceManager
 import json
+import iUtils as i
 
 filename = "resource.json"
 class Program:
@@ -11,12 +12,12 @@ class Program:
         return __r
 
     def choices(self):
-        print("C H A R A C T E R S")
-        print("Data Management System")
+        print("\nC H A R A C T E R S")
+        print("Data Management System\n")
 
         print("(1) View ALL Characters")
         print("(2) Search a Character")
-        print("(3) Add New Character")
+        print("(3) Add New Character\n")
 
     def run(self):
         while True:
@@ -33,13 +34,13 @@ class Program:
                 elif choice == "2":
                 
                     while True:
-                        user_input = input("Enter Valid Value to Search Character (name/age/power): ")
+                        user_input = input("\nEnter Valid Value to Search Character (name/age/power): ")
                         currentName = self.getResourceManager().search(user_input)
                         if(currentName):
-                            print("name returned: ", currentName)
+                            # print("name returned: ", currentName)
 
                             while True:
-                                choice = input("Enter (1) EDIT or (2) DELETE This Character: ")
+                                choice = input("\nEnter (1) EDIT or (2) DELETE This Character: ")
                             
                                 if choice == "1": #edit
                                     newName = input("Enter new name: ")
@@ -52,7 +53,7 @@ class Program:
                                     updatedList = self.getResourceManager().delete_data(currentName)
 
                                     while True:
-                                        viewList = input("View Updated List? y/n: ")
+                                        viewList = input("\nView Updated List? y/n: ")
 
                                         if viewList == 'y':
                                             self.getResourceManager().view_data()
@@ -60,12 +61,12 @@ class Program:
                                         elif viewList == 'n':
                                             break
                                         else:
-                                            print("Enter y/n.")
+                                            print("\nEnter y/n.")
                                         
                                     break
                                 
                                 else:
-                                    print("Enter Valid Number.")
+                                    i.print_bad("\nEnter Valid Number.")
 
                             break
 
@@ -73,14 +74,14 @@ class Program:
 
 
                 elif choice == "3":
-                    nameEntered = input("Enter New Name of character: ")
-                    ageEntered = input("Enter New Age of character: ")
-                    powerEntered= input("Enter New Power of character: ")
+                    nameEntered = input("\nEnter New Name of character: ")
+                    ageEntered = input("\nEnter New Age of character: ")
+                    powerEntered= input("\nEnter New Power of character: ")
                     self.getResourceManager().add_data(nameEntered, ageEntered, powerEntered)
                     break
 
                 else:
-                    print ("You did not enter a valid number. Retry.")
+                    i.print_bad ("\nYou did not enter a valid number. Retry.")
     
     
 p = Program()
